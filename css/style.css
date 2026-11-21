@@ -50,6 +50,10 @@ button,input,select{font:inherit}
 .btn-soft{background:var(--cream);color:var(--navy)}
 .btn-soft:hover{background:#FFE9BD}
 .btn-soft .ic{color:#1FA855}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:var(--sh-1)}
+.btn-navy:hover{background:var(--night);color:#fff;transform:translateY(-1px);box-shadow:var(--sh-2)}
+.paid-tag{display:inline-flex;align-items:center;justify-content:center;height:18px;padding:0 7px;margin-left:2px;border-radius:999px;background:linear-gradient(135deg,var(--saffron-lt),var(--saffron-deep));color:var(--navy);font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1;flex-shrink:0}
+.paid-tag--lg{height:22px;padding:0 10px;font-size:.68rem;margin-left:0}
 .btn-sm{height:40px;padding:0 18px;font-size:.88rem}
 .btn-block{width:100%}
 .link{display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-weight:600;font-size:.95rem}
@@ -133,7 +137,9 @@ button,input,select{font:inherit}
 .elig__field>.ic{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--navy);pointer-events:none}
 .elig__field:focus-within{box-shadow:0 0 0 2px var(--teal)}
 .elig__btn{height:56px;padding:0 26px;font-size:1rem}
-.hero__actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.hero__actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;align-items:center}
+.hero__actions .btn{padding:0 16px;height:46px;font-size:.9rem}
+.hero__actions .btn .ic{width:16px;height:16px}
 .trust{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;padding:18px 0 0;margin:22px 0 0;border-top:1px solid rgba(11,37,69,.1);font-size:.85rem;color:#4A5468}
 .trust li{display:inline-flex;align-items:center;gap:7px}
 .trust .ic{width:16px;height:16px;color:var(--teal)}
@@ -314,6 +320,22 @@ button,input,select{font:inherit}
 .consent a{color:var(--teal);text-decoration:underline}
 .book-form .small{margin-top:12px;text-align:center}
 
+/* Paid detailed consultation */
+#paid-consult,#book,#callback{scroll-margin-top:100px}
+.paid-card{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:flex-start;margin-top:24px;background:var(--sand);border:1px solid var(--line);border-radius:28px;padding:36px 40px;box-shadow:var(--sh-1);position:relative;overflow:hidden}
+.paid-card::before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(244,166,42,.22),transparent 65%);pointer-events:none}
+.paid-card__icon{position:relative;display:grid;place-items:center;width:56px;height:56px;border-radius:16px;background:var(--navy);color:#fff;flex-shrink:0}
+.paid-card__icon .ic{width:26px;height:26px}
+.paid-card__body{position:relative;min-width:0}
+.paid-card__head{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin-bottom:8px}
+.paid-card .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.paid-card h2{font-size:clamp(1.5rem,2.4vw,1.9rem);margin:0 0 10px}
+.paid-card__body>p{color:#3D4759;max-width:640px;margin-bottom:18px}
+.paid-card__meta{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-wrap:wrap;gap:10px 18px}
+.paid-card__meta li{display:inline-flex;align-items:center;gap:8px;font-size:.95rem;font-weight:500;color:var(--navy)}
+.paid-card__meta .ic{width:18px;height:18px;color:var(--saffron-deep)}
+.paid-card__actions{display:flex;flex-wrap:wrap;gap:12px}
+
 /* Footer */
 .footer{background:var(--night);color:#AEBBD0;padding:72px 0 0;font-size:.92rem}
 .footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px}
@@ -391,7 +413,9 @@ button,input,select{font:inherit}
   .elig{flex-direction:column;align-items:stretch;border-radius:22px;padding:10px;gap:8px;margin-top:24px}
   .elig__field{height:58px;border-radius:14px;flex:none}
   .elig__btn{height:54px;width:100%}
-  .hero__actions .btn{flex:1;padding:0 14px}
+  .hero__actions{gap:10px}
+  .hero__actions .btn{flex:1 1 calc(50% - 5px);padding:0 12px;min-width:0}
+  .hero__actions .btn-navy{flex:1 1 100%}
   .trust{gap:8px 16px;font-size:.8rem}
   .hero__media{padding:12px 0 12px 0}
   .hero__img{aspect-ratio:4/3}
@@ -441,6 +465,11 @@ button,input,select{font:inherit}
   .faq summary{padding:16px 18px;font-size:.97rem}
   .faq p{padding:0 18px 18px}
   .book-card{padding:28px 20px;border-radius:22px;gap:28px}
+  #paid-consult,#book,#callback{scroll-margin-top:80px}
+  .paid-card{grid-template-columns:1fr;gap:16px;padding:24px 20px;border-radius:22px;margin-top:16px}
+  .paid-card__icon{width:48px;height:48px;border-radius:14px}
+  .paid-card__actions{flex-direction:column}
+  .paid-card__actions .btn{width:100%}
   .book-form{padding:22px 18px}
   .fgrid{grid-template-columns:1fr}
   .footer{padding-top:52px}
